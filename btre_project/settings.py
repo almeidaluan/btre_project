@@ -109,3 +109,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
+"""
+
+Quando temos um static que não faz parte de um App em especifico,
+
+"""
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
+
+STATICFILES_DIR = [
+    os.path.join(BASE_DIR,'btre_project/static')
+]
