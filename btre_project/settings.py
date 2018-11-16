@@ -19,7 +19,8 @@ INSTALLED_APPS = [
 
     #Apps
     'pages.apps.PagesConfig',
-
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
 
 
     'django.contrib.admin',
