@@ -17,10 +17,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 
-    #Apps
-    'pages.apps.PagesConfig',
-    'listings.apps.ListingsConfig',
-    'realtors.apps.RealtorsConfig',
 
 
     'django.contrib.admin',
@@ -29,6 +25,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    
+    #Apps
+    'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
+
 ]
 
 MIDDLEWARE = [
