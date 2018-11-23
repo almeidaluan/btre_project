@@ -26,7 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    
+    #Humanize Formatador de Data,Numeros
+    'django.contrib.humanize',
+
     #Apps
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
