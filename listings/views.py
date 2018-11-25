@@ -34,6 +34,11 @@ def search(request):
         if keywords:
             queryset_list = queryset_list.filter(description__icontains=keywords)
 
+    if 'city' in request.GET:
+        keywords = request.GET['city']
+        if keywords:
+            queryset_list = queryset_list.filter(city__iexact=city)
+
     data = {
         'bedroom_choices':bedroom_choices,
         'price_choices':price_choices,
