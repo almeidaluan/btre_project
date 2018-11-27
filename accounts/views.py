@@ -5,10 +5,10 @@ def dashboard(request):
     return render(request,'accounts/dashboard.html')
 
 def register(request):
-    return HttpResponse("Register")
+    return render(request,'accounts/register.html')
 
 def login(request):
-    return HttpResponse("Login")
+    return render(request,'accounts/login.html')
 
 def logout(request):
     return HttpResponse("Logout")
