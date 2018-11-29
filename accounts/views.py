@@ -61,7 +61,11 @@ def login(request):
     return render(request, 'accounts/login.html')
 
 def logout(request):
-    return HttpResponse("Logout")
+    if request.method == 'POST':
+        auth.logout(request)
+        messages.success(request, 'You are now logged out')
+    return redirect('home')
+    
 
 
 

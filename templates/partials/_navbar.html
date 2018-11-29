@@ -32,6 +32,22 @@
             </ul>
     
             <ul class="navbar-nav ml-auto">
+              {% if user.is_authenticated %}
+                   <li class="nav-item mr-3">
+                <a class="nav-link" href="{% url 'dashboard' %}">
+                  <i class="fas fa-user-plus"></i> Welcome {{user.username}} (Dashboard)</a>
+              </li>
+              <li class="nav-item mr-3">
+              <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                <i class="fas fa-sign-out-alt"></i> Logout
+              </a>
+              <form action="{% url 'logout' %}" method="POST" id="logout">
+                {% csrf_token %}
+                <input type="hidden">
+              </form>
+            </li>
+              {% else %}
+
               <li class="nav-item mr-3">
                 <a class="nav-link" href="{% url 'register' %}">
                   <i class="fas fa-user-plus"></i> Register</a>
@@ -39,9 +55,9 @@
               <li class="nav-item mr-3">
                 <a class="nav-link" href="{% url 'login' %}">
                   <i class="fas fa-sign-in-alt"></i>
-    
                   Login</a>
               </li>
+              {% endif %}
             </ul>
           </div>
         </div>
