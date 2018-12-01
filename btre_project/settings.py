@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'listings.apps.ListingsConfig',
     'realtors.apps.RealtorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig'
 
 ]
 
@@ -150,4 +151,9 @@ MESSAGE_TAGS = {
 }
 
 
-
+#Email Config 
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='seuemailparapoderusarcomoexemploparaenviaremails'
+EMAIL_HOST_PASSWORD='suasenha'
+EMAIL_USE_TLS=True
