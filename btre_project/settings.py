@@ -1,7 +1,19 @@
 import os
-
+import environ
+#https://github.com/joke2k/django-environ
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+#Configuracao para utilizar variavel de ambiente
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+print(env('DEBUG'))
+# reading .env file
+environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
+#################################
 
 
 # Quick-start development settings - unsuitable for production
@@ -11,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'uab8l+xn&$mlpm2pu54w^+o%ix0=nvu6cvta6j7q9_u)4zu)$#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
 ALLOWED_HOSTS = []
 
@@ -72,14 +84,21 @@ WSGI_APPLICATION = 'btre_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+
+    
+    # no lugar do env.db() 
+    #  {
+    #    'ENGINE': 'django.db.backends.postgresql',
+    #   'NAME': 'btredb',
+    #   'USER': 'postgres',
+    #    'PASSWORD': 'luan36504867',
+    #    'HOST': 'localhost'
+    # }
+    
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'btredb',
-        'USER': 'postgres',
-        'PASSWORD': 'luan36504867',
-        'HOST': 'localhost'
-    }
+    
+    'default': env.db()
 }
 
 
